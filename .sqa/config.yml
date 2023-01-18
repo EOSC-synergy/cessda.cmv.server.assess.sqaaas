@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.cmv.server:
+      branch: main
+      repo: https://github.com/cessda/cessda.cmv.server
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/cessda/cessda.cmv.server git:
+        commands:
+        - /usr/bin/env sh .sqa/script.hasty-burgundy-raccoon.sh
+        container: qc.acc_goopy-wisteria-capuchin
+  QC.Doc:
+    repos:
+      github.com/cessda/cessda.cmv.server find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-burgundy-bird.sh
+        container: qc.doc_homey-cinnabar-tzu
+      github.com/cessda/cessda.cmv.server git:
+        commands:
+        - /usr/bin/env sh .sqa/script.thirsty-lilac-ostrich.sh
+        container: qc.doc_flabby-mustard-iguana
+      github.com/cessda/cessda.cmv.server markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-celadon-frise.sh
+        container: qc.doc_tasty-lime-sparrow
+  QC.Lic:
+    repos:
+      github.com/cessda/cessda.cmv.server licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.wheezy-firebrick-devil.sh
+        container: qc.lic_homely-brown-markhor
+  QC.Met:
+    repos:
+      github.com/cessda/cessda.cmv.server cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.snazzy-auburn-shrew.sh
+        container: qc.met_queasy-celadon-mastiff
+  QC.Sty:
+    repos:
+      github.com/cessda/cessda.cmv.server checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-amber-worm.sh
+        container: qc.sty_stinky-flax-peccary
+      github.com/cessda/cessda.cmv.server jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.pretty-cerise-squid.sh
+        container: qc.sty_squeaky-beige-ragdoll
+  QC.Ver:
+    repos:
+      github.com/cessda/cessda.cmv.server get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-amaranth-chimpanzee.sh
+        container: qc.ver_scanty-ecru-shrimp
+timeout: 5400
