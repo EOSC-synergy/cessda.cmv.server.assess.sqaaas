@@ -4,6 +4,9 @@ config:
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.7
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.cmv.documentation:
+      branch: main
+      repo: https://github.com/cessda/cessda.cmv.documentation
     github.com/cessda/cessda.cmv.server:
       branch: main
       repo: https://github.com/cessda/cessda.cmv.server
@@ -15,48 +18,48 @@ sqa_criteria:
     repos:
       github.com/cessda/cessda.cmv.server git:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-harlequin-seahorse.sh
-        container: qc.acc_skinny-xanthic-chinook
+        - /usr/bin/env sh .sqa/script.whiny-alizarin-sponge.sh
+        container: qc.acc_lousy-khaki-jackal
   QC.Doc:
     repos:
-      github.com/cessda/cessda.cmv.server find_doc_files.py:
+      github.com/cessda/cessda.cmv.documentation find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-sepia-meerkat.sh
-        container: qc.doc_stuffy-chestnut-tamarin
-      github.com/cessda/cessda.cmv.server git:
+        - /usr/bin/env sh .sqa/script.goopy-zucchini-squirrel.sh
+        container: qc.doc_slimy-carmine-civet
+      github.com/cessda/cessda.cmv.documentation git:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-champagne-chihuahua.sh
-        container: qc.doc_sleazy-turquoise-bobcat
-      github.com/cessda/cessda.cmv.server markdownlint:
+        - /usr/bin/env sh .sqa/script.greasy-pink-nightingale.sh
+        container: qc.doc_trippy-puce-wolf
+      github.com/cessda/cessda.cmv.documentation markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-rose-tiger.sh
-        container: qc.doc_pretty-ruby-maltese
+        - /usr/bin/env sh .sqa/script.clammy-blue-rhinoceros.sh
+        container: qc.doc_hazy-plum-foxhound
   QC.Lic:
     repos:
       github.com/cessda/cessda.cmv.server licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-chartreuse-camel.sh
-        container: qc.lic_paltry-apricot-eel
+        - /usr/bin/env sh .sqa/script.tasty-olivine-ocelot.sh
+        container: qc.lic_homely-amaranth-foxhound
   QC.Met:
     repos:
       github.com/cessda/cessda.cmv.server cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-khaki-eleuth.sh
-        container: qc.met_queasy-aquamarine-seahorse
+        - /usr/bin/env sh .sqa/script.stealthy-chartreuse-whippet.sh
+        container: qc.met_sleepy-aquamarine-flounder
   QC.Sty:
     repos:
       github.com/cessda/cessda.cmv.server checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.thirsty-teal-seal.sh
-        container: qc.sty_crappy-cinnamon-yak
+        - /usr/bin/env sh .sqa/script.gamy-rust-dodo.sh
+        container: qc.sty_blurry-ultramarine-vulture
       github.com/cessda/cessda.cmv.server jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.squirrely-celadon-tapir.sh
-        container: qc.sty_silly-sapphire-oriole
+        - /usr/bin/env sh .sqa/script.freaky-plum-cichlid.sh
+        container: qc.sty_scummy-copper-paradise
   QC.Ver:
     repos:
       github.com/cessda/cessda.cmv.server get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-wheat-lemming.sh
-        container: qc.ver_bumpy-lemon-avocet
+        - /usr/bin/env sh .sqa/script.clammy-ruby-retriever.sh
+        container: qc.ver_wiggy-russet-hamster
 timeout: 5400
