@@ -1,4 +1,4 @@
 (
 cd github.com/cessda/cessda.cmv.server &&
-    jsonlint-cli "**/*.json"
+    find_doc_files.py --file_type all
 )

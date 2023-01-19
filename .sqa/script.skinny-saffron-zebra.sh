@@ -1,4 +1,4 @@
 (
 cd github.com/cessda/cessda.cmv.server &&
-    mvn checkstyle:check
+    git rev-parse --is-inside-work-tree
 )
