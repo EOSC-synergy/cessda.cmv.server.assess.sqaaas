@@ -5,5 +5,5 @@
 
 (
 cd github.com/cessda/cessda.cmv.server &&
-    git rev-parse --is-inside-work-tree
+    hadolint Dockerfile --failure-threshold error
 )
